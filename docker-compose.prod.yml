@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  gateways-web-app:
+    container_name: gateways-web-app
+    image: gateways-web-app
+    build:
+      context: .
+      target: production
+    ports:
+      - "80:80"
+    env_file:
+      - .env
+

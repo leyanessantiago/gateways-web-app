@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  gateways-web-app-dev:
+    container_name: gateways-web-app-dev
+    image: gateways-web-app-dev
+    build:
+      context: .
+      target: development
+    command: npm start
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
