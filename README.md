@@ -2,6 +2,23 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Environment
+
+See `.env.example` file
+
+## Docker
+
+For development run:
+
+## `npm run docker:dev`
+
+And open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+For production run:
+
+## `npm run docker:prod`
+And open [http://localhost](http://localhost) to view it in the browser.
+
 ## Available Scripts
 
 In the project directory, you can run:

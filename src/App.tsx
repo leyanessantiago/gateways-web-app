@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ApiProvider } from './api';
 import './App.css';
+import GatewaysList from './pages/Gateways/List';
+import GatewaysDetails from './pages/Gateways/Details';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+          <ApiProvider>
+            <BrowserRouter>
+              <Routes>
+                <Route path="" element={<GatewaysList />} />
+                <Route path="/details/:id" element={<GatewaysDetails />} />
+              </Routes>
+            </BrowserRouter>
+          </ApiProvider>
+      </main>
     </div>
   );
 }
