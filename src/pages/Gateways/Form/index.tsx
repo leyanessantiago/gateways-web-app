@@ -186,12 +186,11 @@ const GatewayForm: FC<Props> = (props) => {
           <Form.List name="devices">
             {(fields, { add, remove }) => (
               <>
-                {fields.map(({ key, name, fieldKey, ...restField }) => (
+                {fields.map(({ key, name, ...restField }) => (
                   <Space key={key} style={{ display: 'flex', marginBottom: 8 }} align="baseline">
                     <Form.Item
                       {...restField}
                       name={[name, 'uid']}
-                      fieldKey={[fieldKey, 'uid']}
                       rules={[{ required: true, message: 'Missing uid' }]}
                     >
                       <InputNumber style={{ width: '100%' }} placeholder="UID" />
@@ -199,14 +198,12 @@ const GatewayForm: FC<Props> = (props) => {
                     <Form.Item
                       {...restField}
                       name={[name, 'vendor']}
-                      fieldKey={[fieldKey, 'vendor']}
                     >
                       <Input placeholder="Vendor" />
                     </Form.Item>
                     <Form.Item
                       {...restField}
                       name={[name, 'status']}
-                      fieldKey={[fieldKey, 'status']}
                     >
                       <Select style={{ width: '100%' }} placeholder="Status">
                         <Option value="online">Online</Option>
